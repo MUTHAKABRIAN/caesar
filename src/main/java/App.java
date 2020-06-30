@@ -1,3 +1,4 @@
+
 import java.io.Console;
 import java.util.Scanner;
 
@@ -19,6 +20,24 @@ public class App {
                 System.out.println("Please enter an encryption key:");
                 int key= myScanner.nextInt();
 
+                CaesarCipher userEncryption = new CaesarCipher(statement,key);
+                String encryption = userEncryption.isActuallyEncrypted(statement,key);
+
+            }else if (userAnswer.equals("decrypt")) {
+                System.out.println("Please enter a statement to decrypt:");
+                String statementDecrypt = myConsole.readLine();
+
+                System.out.println("please enter an decryption key");
+                int keyDecrypt =myScanner.nextInt();
+                CaesarCipher userDecryption = new CaesarCipher(statementDecrypt, keyDecrypt);
+                String decryption = userDecryption.toDecrypt(statementDecrypt, keyDecrypt);
+
+                System.out.println("The decrypted statement is:\n"+decryption);
+            }else if(userAnswer.equals("exit")){
+                runProgram= false;
+            }
+        else {
+                System.out.println("Sorry we could not recognise your input");
             }
         }
     }
