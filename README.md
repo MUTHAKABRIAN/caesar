@@ -3,7 +3,7 @@
 ### This is a program built with java that allows users to encrypt or decrypt a text.Depending on the user's text and key input 
 
 ### AUTHOR 
-### Brian Muthaka###
+### Brian Muthaka ###
 
 ### WAY AROUND IT
 
