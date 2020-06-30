@@ -12,6 +12,10 @@ public class CaesarCipher {
     public int getKey(){
         return mKey;
     }
+    public String isEncrypted(){
+        mStatement="b";
+        return mStatement;
+    }
     public String isActuallyEncrypted(String statement, int key){
         String result="";
         StringBuffer encrypted = new StringBuffer();
@@ -34,4 +38,4 @@ public class CaesarCipher {
         }
     }
 
-}
+
