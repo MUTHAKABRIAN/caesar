@@ -25,7 +25,7 @@ public class CaesarCipher {
 
             if (encrypt +key>122){
                 char encrypts = (char) (encrypt-26+key);
-                encrypted.append(encrypt);
+                encrypted.append(encrypts);
             }
             else{
                 char encrypts =(char ) (encrypt+(key % 26));
