@@ -4,28 +4,32 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Console myConsole = System.console();
+
         Scanner myScanner = new Scanner(System.in);
+        String userAnswer ="" ;
+        String userChoice = "";
         boolean runProgram = true;
 
-        while(runProgram){
+
+        while(true){
             System.out.println("welcome to Caesar Cipher");
             System.out.println ("Would you like encrypt or decrypt a statement");
-            String userAnswer= myConsole.readLine();
+            userChoice= myScanner.nextLine();
 
-            if (userAnswer.equals("encrypt")){
+            if (userChoice.equals("encrypt")){
                 System.out.println("Please enter a statement that you would like to encrypt: ");
-                String statement = myConsole.readLine();
+                String statement = myScanner.nextLine();
 
                 System.out.println("Please enter an encryption key:");
                 int key= myScanner.nextInt();
 
                 CaesarCipher userEncryption = new CaesarCipher(statement,key);
                 String encryption = userEncryption.isActuallyEncrypted(statement,key);
+                System.out.println("The encrypted statement is:\n"+encryption);
 
-            }else if (userAnswer.equals("decrypt")) {
+            }else if (userChoice.equals("decrypt")) {
                 System.out.println("Please enter a statement to decrypt:");
-                String statementDecrypt = myConsole.readLine();
+                String statementDecrypt = myScanner.nextLine();
 
                 System.out.println("please enter an decryption key");
                 int keyDecrypt =myScanner.nextInt();
@@ -33,11 +37,8 @@ public class App {
                 String decryption = userDecryption.toDecrypt(statementDecrypt, keyDecrypt);
 
                 System.out.println("The decrypted statement is:\n"+decryption);
-            }else if(userAnswer.equals("exit")){
+            }else if(userChoice.equals("exit")){
                 runProgram= false;
-            }
-        else {
-                System.out.println("Sorry we could not recognise your input");
             }
         }
     }
