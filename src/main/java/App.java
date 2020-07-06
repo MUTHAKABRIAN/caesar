@@ -11,9 +11,9 @@ public class App {
         boolean runProgram = true;
 
 
-        while(true){
+        while(runProgram){
             System.out.println("welcome to Caesar Cipher");
-            System.out.println ("Would you like encrypt or decrypt a statement");
+            System.out.println ("Would you like encrypt or decrypt a statement or exit");
             userChoice= myScanner.nextLine();
 
             if (userChoice.equals("encrypt")){
